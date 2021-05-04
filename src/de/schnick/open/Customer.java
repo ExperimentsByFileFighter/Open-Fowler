@@ -29,7 +29,7 @@ public class Customer {
             Rental rental = (Rental) it.next();
 
             //show figures for this rental
-            result.append("\t").append(rental.getMovie().getTitle()).append("\t").append("\t").append(rental.getDaysRented()).append("\t").append(rental.getCharge()).append("\n");
+            result.append("\t").append(rental.getMovie().getTitle()).append("\t").append("\t").append(rental.getDaysRented()).append("\t").append(rental.movie.getCharge(rental.getDaysRented())).append("\n");
         }
         //add footer lines
         result.append("Amount owed is ").append(getTotalCharge()).append("\n");
@@ -44,7 +44,7 @@ public class Customer {
         while (enum_rentals.hasMoreElements()) {
             Rental rental = (Rental) enum_rentals.nextElement();
             //show figures for this rental
-            totalAmount += rental.getCharge();
+            totalAmount += rental.movie.getCharge(rental.getDaysRented());
         }
         return totalAmount;
     }
