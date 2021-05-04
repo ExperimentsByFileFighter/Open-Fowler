@@ -1,3 +1,5 @@
+package de.schnick.open;
+
 class Rental {
     private Movie movie;
     private int daysRented;
